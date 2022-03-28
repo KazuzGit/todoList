@@ -242,8 +242,9 @@ fabric.properties
 # Built Visual Studio Code Extensions
 *.vsix
 
-# geekshop --->
+# todoList --->
 
 tmp
 
-# <--- geekshop
+# <--- todoList
+node_modules

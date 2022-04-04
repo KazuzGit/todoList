@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
-export default function Footer() {
+function Footer({ textFooter }) {
   return (
-    <footer className="footer">
-      <div className="container">
-        <span className="text-muted">TodoList приложение</span>
-      </div>
-    </footer>
+    <div className="card-footer fixed-bottom flex-fill bg-info text-white">
+      {textFooter}
+    </div>
   );
 }
+export default Footer;

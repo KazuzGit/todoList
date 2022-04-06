@@ -1,29 +1,30 @@
-import React from 'react'
-import UserList from "./User";
+import React from "react";
+import { Link } from "react-router-dom";
 
-function NavbarItem({name, href}) {
-    return (
-        <li className="nav-item active">
-          <a className="nav-link" to={href}>{name}</a>
-        </li>
-    )
-}
+const MenuItem = ({ title, link }) => {
+  let className = "flex-fill bg-warning px-5 list-group-item text-white";
+  return (
+    <li className={className}>
+      <Link style={{ textDecoration: "none" }} to={link}>
+        {title}
+      </Link>
+    </li>
+  );
+};
 
-
-export default function Navbar({navbarItems}) {
-    return (
-        <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a className="navbar-brand" href="#">Home</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarCollapse">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  {navbarItems.map((item) => <NavbarItem name={item.name} href={item.href} />)}
-                </li>
-             </ul>
-            </div>
-          </nav>
-    )
-}
+const MenuList = ({ menu }) => {
+  return (
+    <div className="navbar">
+      <ul className="py-4 flex-fill  list-group list-group-horizontal">
+        {menu.map((menuItem) => (
+          <MenuItem
+            title={menuItem.title}
+            link={menuItem.link}
+            key={menuItem.id}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
+export default MenuList;

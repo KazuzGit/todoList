@@ -246,6 +246,5 @@ fabric.properties
 
 tmp
 node_modules
-frontend
 
 # <--- todoList
